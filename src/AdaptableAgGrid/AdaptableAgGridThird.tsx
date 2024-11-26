@@ -6,7 +6,6 @@ import {
   Adaptable,
   AdaptableApi,
   AdaptableOptions,
-  AdaptableStateFunctionConfig,
 } from '@adaptabletools/adaptable-react-aggrid';
 import { columnDefs, defaultColDef } from './columnDefs';
 import { WebFramework, rowData } from './rowData';
@@ -16,7 +15,7 @@ LicenseManager.setLicenseKey(import.meta.env.VITE_AG_GRID_LICENSE_KEY);
 
 const CONFIG_REVISION = 1;
 
-export const AdaptableAgGrid = () => {
+export const AdaptableAgGridThird = () => {
   const gridOptions = useMemo<GridOptions<WebFramework>>(
     () => ({
       defaultColDef,
@@ -46,29 +45,7 @@ export const AdaptableAgGrid = () => {
       licenseKey: import.meta.env.VITE_ADAPTABLE_LICENSE_KEY,
       primaryKey: 'id',
       userName: 'Test User',
-      adaptableId: 'Adaptable React Support Template',
-      adaptableStateKey: 'adaptable_react_support_template',
-      // Typically you will store State remotely; here we simply leverage local storage for convenience
-      stateOptions: {
-        persistState: (state, adaptableStateFunctionConfig) => {
-          localStorage.setItem(
-            adaptableStateFunctionConfig.adaptableStateKey,
-            JSON.stringify(state)
-          );
-          return Promise.resolve(true);
-        },
-        loadState: (config: AdaptableStateFunctionConfig) => {
-          return new Promise((resolve) => {
-            let state = {};
-            try {
-              state = JSON.parse(localStorage.getItem(config.adaptableStateKey) as string) || {};
-            } catch (err) {
-              console.log('Error loading state', err);
-            }
-            resolve(state);
-          });
-        },
-      },
+      adaptableId: 'Adaptable 3',
       predefinedConfig: {
         Dashboard: {
           Revision: CONFIG_REVISION,

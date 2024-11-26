@@ -1,1 +1,1 @@
-export { AdaptableAgGrid } from './AdaptableAgGrid';
+export { AdaptableAgGridFirst } from './AdaptableAgGridFirst.tsx';
