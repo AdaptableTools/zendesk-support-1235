@@ -104,7 +104,7 @@ export const AdaptableAgGridFirst = () => {
         adaptableApiRef.current = adaptableApi;
       }}
     >
-      <div style={{ display: 'flex', flexFlow: 'column', height: '100vh' }}>
+      <div style={{ display: 'flex', flexFlow: 'column', height: '100vh', '--ab-dashboard-header__background': 'red' } as React.CSSProperties}>
         <Adaptable.UI style={{ flex: 'none' }} />
         <Adaptable.AgGridReact className="ag-theme-alpine" />
       </div>
